@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="65.5mm" height="51.25mm" viewBox="-1375 -875 6550 5125">
+	<g id="Endless_Knot_by_Adam_Stanislav" transform="rotate(45,2250,2750)">
+		<title>Endless Knot, by Adam Stanislav</title>
+		<defs>
+			<filter id="StrokeFilter" style="color-interpolation-filters:sRGB;" x="-0.25" y="-0.25" width="1.5" height="1.5">
+				<feGaussianBlur result="result91" stdDeviation="0.01" in="SourceAlpha" />
+				<feComposite in2="result91" in="SourceGraphic" operator="in" result="fbSourceGraphic" />
+				<feGaussianBlur stdDeviation="0.01" in="fbSourceGraphic" result="result1" /> 
+				<feTurbulence seed="20" type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="result0" />
+				<feDisplacementMap in2="result0" in="result1" xChannelSelector="R" yChannelSelector="G" scale="30" result="result2" />
+				<feColorMatrix result="result3" values="1" type="saturate" />
+				<feGaussianBlur stdDeviation="0.01" in="fbSourceGraphic" result="result4" />
+				<feComposite in2="result3" in="result4" result="fbSourceGraphic" operator="atop" />
+				<feGaussianBlur stdDeviation="1.5" in="fbSourceGraphic" result="result0" />
+				<feTurbulence type="fractalNoise" result="result1" numOctaves="8" seed="20" baseFrequency="0.02" />
+				<feComposite in="result0" in2="result1" operator="out" result="result2" />
+				<feSpecularLighting in="result2" specularExponent="30" specularConstant="2" result="result4" surfaceScale="2.5" lighting-color="rgb(99%,74%,6%)">
+					<feDistantLight azimuth="225" elevation="62" />
+				</feSpecularLighting>
+				<feComposite result="result92" operator="atop" in="result4" in2="result2" />
+				<feBlend in2="result92" mode="multiply" />
+			</filter>
+			<filter id="FillFilter" style="color-interpolation-filters:sRGB;">
+				<feGaussianBlur stdDeviation="1" in="SourceGraphic" result="result0" />
+				<feTurbulence result="result1" numOctaves="4" seed="4" baseFrequency="0.057" type="turbulence" />
+				<feDisplacementMap result="result91" in2="result1" xChannelSelector="R" />
+				<feComposite in2="result91" in="result0" operator="out" result="result2" />
+				<feComposite result="result5" operator="arithmetic" in="SourceAlpha" in2="result2" k3="1.2" k1="0.1" />
+				<feBlend in2="result5" mode="multiply" result="fbSourceGraphic" />
+				<feGaussianBlur result="result0" in="fbSourceGraphic" stdDeviation="3" />
+				<feSpecularLighting specularExponent="15" specularConstant="0.4" surfaceScale="3" lighting-color="rgb(99%,90%,36%)" result="result1" in="result0">
+					<fePointLight x="-5000" y="-10000" z="20000" />
+				</feSpecularLighting>
+				<feComposite operator="in" result="result2" in="result1" in2="fbSourceGraphic" />
+				<feComposite in2="result2" k3="3.5" k2="2.5" operator="arithmetic" result="result4" in="fbSourceGraphic" k1="-1" />
+				<feBlend in2="result4" mode="multiply" />
+			</filter>
+		</defs>
+		<path id="Fill" style="fill:rgb(45%,5%,13%);filter:url(#FillFilter)" d="M0,0h1500v1000h500v-1000h1500v1500h-1000v500h1000v1500h-1000v1000h-1500v-1000h-500v1000h-1500v-1500h1000v-500h-1000v-1500h1000ZM500,500v500h500v-500ZM2550,500v500h500v-500ZM1500,1500v500h500v-500ZM500,1500v500h500v-500ZM-500,1500v500h500v-500ZM500,2500v500h500v-500ZM1500,2500v500h500v-500ZM2500,2500v500h500v-500ZM1500,3500v500h500v-500ZM-500,3500v500h500v-500Z" />
+		<g id="Strokes" style="fill:none;stroke:rgb(75%,58%,25%);stroke-width:100;filter:url(#StrokeFilter)">
+			<polyline points="0 2000 0 0 1500 0 1500 1000" />
+			<polyline points="2000 2000 2000 0 3500 0 3500 1500 2500 1500" />
+			<polyline points="500 2000 500 500 1000 500 1000 1000" />
+			<polyline points="2500 2000 2500 500 3000 500 3000 1000 2500 1000" />
+			<polyline points="0 1000-1000 1000-1000 2500 1000 2500" />
+			<polyline points="0 1500-500 1500-500 2000 1000 2000" />
+			<polyline points="1500 2000 3500 2000 3500 3500 2500 3500" />
+			<polyline points="1500 2500 3000 2500 3000 3000 2500 3000" />
+			<polyline points="1000 1500 1000 3000" />
+			<polyline points="1500 1500 1500 3000" />
+			<polyline points="500 1000 2000 1000" />
+			<polyline points="500 1500 2000 1500" />
+			<polyline points="500 3000 2000 3000" />
+			<polyline points="500 3500 2000 3500" />
+			<polyline points="2500 2500 2500 4500 1000 4500 1000 3500" />
+			<polyline points="500 2500 500 4500-1000 4500-1000 3000 0 3000" />
+			<polyline points="2000 2500 2000 4000 1500 4000 1500 3500" />
+			<polyline points="0 2500 0 4000 -500 4000 -500 3500 0 3500" />
+		</g>
+	</g>
+</svg>

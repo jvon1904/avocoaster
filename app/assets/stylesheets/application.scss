@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+body {
+    background-color: hsl(169, 10%, 89%);
+}
+h1 {
+  color: blue;
+}
