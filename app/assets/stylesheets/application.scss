@@ -18,17 +18,25 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(
-    to top left,
-    hsl(10, 35%, 15%),
-    hsl(10, 35%, 10%)
-  );
+  background-color: hsl(187, 80%, 98%);
   background-size: cover;
 }
 
+nav {
+  box-shadow: 0px 0px 5px black;
+}
+.navbar-custom .navbar-text {
+  color: green;
+  size: 100px;
+}
+// a .nav-link {
+//   color: hsl(67, 100%, 80%);
+//   size: 100px;
+// }
+
 .main {
   border-radius: 10px;
-  background-color: hsl(40, 35%, 80%);
+  background-color: hsl(187, 23%, 90%);
   box-shadow: 5px 5px 10px black;
   display: flex;
   flex-direction: column;
@@ -38,9 +46,32 @@ body {
 }
 
 .main h1 {
-  color: hsl(180, 50%, 50%);
+  color: hsl(187, 80%, 10%);
+  margin: 20px;
+}
+.main h2 {
+  color: hsl(187, 80%, 5%);
   margin: 20px;
 }
 p {
-  color: hsl(180, 100%, 10%);
+  color: hsl(187, 100%, 10%);
+}
+
+.notice {
+  color: hsl(187, 50%, 50%);
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(187, 80%, 10%);
+  height: 20%;
+  margin-top: -20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: hsl(187, 80%, 98%);
+  border-top: 10px solid hsl(187, 50%, 50%);
 }
