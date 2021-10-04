@@ -17,8 +17,30 @@
 @import "bootstrap";
 
 body {
-    background-color: hsl(169, 10%, 89%);
+  height: 100vh;
+  background: linear-gradient(
+    to top left,
+    hsl(10, 35%, 15%),
+    hsl(10, 35%, 10%)
+  );
+  background-size: cover;
 }
-h1 {
-  color: blue;
+
+.main {
+  border-radius: 10px;
+  background-color: hsl(40, 35%, 80%);
+  box-shadow: 5px 5px 10px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.main h1 {
+  color: hsl(180, 50%, 50%);
+  margin: 20px;
+}
+p {
+  color: hsl(180, 100%, 10%);
 }
