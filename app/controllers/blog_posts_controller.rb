@@ -1,6 +1,7 @@
 class BlogPostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_blog_post, only: %i[ show edit update destroy ]
+  before_action :correct_user, only:  [:edit, :update, :destroy, :show]
 
   def home
   end
@@ -16,7 +17,8 @@ class BlogPostsController < ApplicationController
 
   # GET /blog_posts/new
   def new
-    @blog_post = BlogPost.new
+    # @blog_post = BlogPost.new
+    @blog_post = current_user.blog_posts.build
   end
 
   # GET /blog_posts/1/edit
@@ -25,8 +27,8 @@ class BlogPostsController < ApplicationController
 
   # POST /blog_posts or /blog_posts.json
   def create
-    @blog_post = BlogPost.new(blog_post_params)
-
+    # @blog_post = BlogPost.new(blog_post_params)
+    @blog_post = current_user.blog_posts.build(blog_post_params)
     respond_to do |format|
       if @blog_post.save
         format.html { redirect_to @blog_post, notice: "Blog post was successfully created." }
@@ -60,6 +62,11 @@ class BlogPostsController < ApplicationController
     end
   end
 
+  def correct_user
+    @blog_post = current_user.blog_posts.find_by(id: params[:id])
+    redirect_to blog_posts_path, notice: "Not authorized to Edit this Blog Post" if @blog_post.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog_post
@@ -68,6 +75,6 @@ class BlogPostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_post_params
-      params.require(:blog_post).permit(:title, :body)
+      params.require(:blog_post).permit(:title, :body, :user_id)
     end
 end
