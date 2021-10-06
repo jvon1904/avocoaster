@@ -1,6 +1,7 @@
 <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: hsl(187, 80%, 5%);">
   <div class="container-fluid">
-    <img src='<%= image_path('256px-Instagram_icon.png') %>' alt="#" width="35" height="35">
+  <img src='<%= image_path('endlessknot.svg') %>' alt='#' width="35" height= "35">
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,6 +17,10 @@
         </li>
        
         <% if user_signed_in? %>
+
+          <li class="nav-item">
+            <%= link_to 'Profile', profiles_path, class: 'nav-link'%>
+          </li>
 
           <li class="nav-item">
             <%= link_to 'Blogs', blogs_path, class: 'nav-link'%>

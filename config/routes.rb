@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :profiles
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   resources :blog_posts
+  get 'profiles/new'
   get 'users/sign_in'
   get 'users/sign_up'
   delete 'users/sign_out'
