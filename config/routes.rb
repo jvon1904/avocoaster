@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :profiles
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
   resources :blog_posts
   get 'profiles/new'

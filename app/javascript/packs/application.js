@@ -8,13 +8,10 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 
-
+require("bootstrap/dist/js/bootstrap");
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
-
-import * as bootstrap from "bootstrap";
-import "../stylesheets/application";
 
 document.addEventListener("DOMContentLoaded", function (event) {
   var popoverTriggerList = [].slice.call(
