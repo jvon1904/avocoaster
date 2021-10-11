@@ -1,23 +1,13 @@
 @import "bootstrap/scss/bootstrap";
 
 body {
-  height: 100vh;
-  background-color: hsl(187, 80%, 98%);
-  // background-color: blue;
+  background-color: hsl(192, 14%, 93%);
+  padding-bottom: 100px;
 }
-
-nav {
-  box-shadow: 0px 0px 5px black;
+#top {
+  display: flex;
+  justify-content: space-around;
 }
-.navbar-custom .navbar-text {
-  color: green;
-  size: 100px;
-}
-// a .nav-link {
-//   color: hsl(67, 100%, 80%);
-//   size: 100px;
-// }
-
 .main {
   border-radius: 2px;
   background-color: hsl(187, 23%, 90%);
@@ -28,6 +18,10 @@ nav {
   justify-content: center;
   padding: 20px;
   border: 10px solid hsl(187, 80%, 5%);
+}
+
+#nav-logo {
+  margin-right: 1.5rem;
 }
 
 .main h1 {
@@ -46,17 +40,33 @@ p {
   color: hsl(187, 50%, 50%);
 }
 
-.footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: hsl(187, 80%, 10%);
-  height: 20%;
-  margin-top: -20%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: hsl(187, 80%, 98%);
-  border-top: 10px solid hsl(187, 50%, 50%);
+.img-profile {
+  clip-path: circle(100px at 150px 150px);
+
+  width: 300px;
+}
+
+.card-profile {
+  padding-top: 2rem;
+  padding: 1.5rem;
+}
+
+.card-profile h3 {
+  color: #282e3d;
+}
+
+.btn-primary {
+  background-color: #4d5876;
+}
+.btn-primary:hover {
+  background-color: #282e3d;
+}
+
+.attribution {
+  font-size: 0.5rem;
+  color: hsl(187, 23%, 90%);
+}
+
+.hide {
+  display: none;
 }
