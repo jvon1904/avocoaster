@@ -24,6 +24,10 @@ body {
   margin-right: 1.5rem;
 }
 
+.nav-item:hover {
+  border-bottom: 2px solid black;
+}
+
 .main h1 {
   color: hsl(187, 80%, 10%);
   margin: 20px;
