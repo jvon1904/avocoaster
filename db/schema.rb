@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_09_033702) do
+ActiveRecord::Schema.define(version: 2021_10_12_164455) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.string "title"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_10_09_033702) do
     t.date "date_of_birth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
