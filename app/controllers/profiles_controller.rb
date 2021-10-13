@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles or /profiles.json
   def index
@@ -13,6 +15,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
+    # @profile = current_user.friend.build
   end
 
   # GET /profiles/1/edit
@@ -22,6 +25,7 @@ class ProfilesController < ApplicationController
   # POST /profiles or /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    # @profile = current_user.friend.build(profile_params)
 
     respond_to do |format|
       if @profile.save
@@ -54,6 +58,11 @@ class ProfilesController < ApplicationController
       format.html { redirect_to profiles_url, notice: "Profile was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @profile = current_user.profile
+    redirect_to profiles_path, notice: "This ain't your profile!" if @profile.nil?
   end
 
   private

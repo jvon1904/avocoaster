@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
+  <div class="field mb-3">
+  <%= form.text_field :first_name, class: "form-control", placeholder: "first name", autocomplete: "off"%>
+</div>
+
+<div class="field mb-3">
+  <%= form.text_field :last_name, class: "form-control", placeholder: "last name", autocomplete: "off"%>
+</div>
 
   <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
+    <%= form.number_field :user_id, id: :profile_user_id, value: current_user.id, type: "hidden" %> 
+    </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" >
+    <%= form.submit "Save", class: "btn btn-primary m-3 ms-0"  %>
   </div>
 <% end %>

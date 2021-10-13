@@ -1,6 +1,10 @@
-<h1>Editing Profile</h1>
+<div class="col-11 col-lg-6">
+    <div class="card card-form container-sm">
+        <h1>Edit Profile</h1>
 
-<%= render 'form', profile: @profile %>
+        <%= render 'form', profile: @profile %>
 
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>
+        <%#= link_to 'Show', @profile %>
+        <%= link_to "Don't change it after all...", profiles_path %>
+    </div>
+</div>

@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div class="col-11 col-lg-6">
+    <div class="card card-form container-sm"><p id="notice"><%= notice %></p>
 
+<h1><%= current_user.profile.first_name %>'s Profile</h1>
 <p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
@@ -14,6 +16,9 @@
   <strong>User:</strong>
   <%= @profile.user_id %>
 </p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<div>
+  <%= link_to 'See it!', profiles_path, class: "btn btn-primary"%>
+  <%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-primary" %> 
+</div>
+</div>
+</div>
