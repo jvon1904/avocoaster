@@ -1,5 +1,6 @@
 @import "bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0:600;1,300&display=swap");
+@import url(navbar.scss);
 
 body {
   background-color: hsl(192, 14%, 93%);
@@ -53,8 +54,14 @@ p {
 .nav-item {
   border-bottom: 2px solid hsl(192, 14%, 93%);
 }
-.nav-item:hover {
-  border-bottom: 2px solid black;
+
+.navbar-collapse.collapsing .nav-item:hover,
+.navbar-collapse.show .nav-item:hover {
+  border-bottom: 2px solid hsl(192, 14%, 93%);
+}
+
+.nav-item-arrow {
+  display: inline;
 }
 
 .nav-item-dark {
@@ -71,9 +78,64 @@ p {
 .navbar-light .nav-item-dark:hover .nav-link {
   color: hsl(0, 0%, 100%);
 }
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-item-dark .nav-link:hover:after {
+  width: 0;
+}
 
 .navbar-light .nav-item-dark .nav-link {
   color: hsl(187, 23%, 90%);
+}
+
+.nav-item-dark-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.navbar-collapse.collapsing .navbar-nav-right,
+.navbar-collapse.show .navbar-nav-right {
+  display: none;
+}
+
+.navbar-collapse.collapsing .navbar-nav-left,
+.navbar-collapse.show .navbar-nav-left {
+  display: none;
+}
+
+.navbar-collapse.collapsing .nav-item-collapsed,
+.navbar-collapse.show .nav-item-collapsed {
+  display: inline;
+  cursor: pointer;
+}
+
+.nav-item-arrow {
+  font-weight: 500;
+}
+.lil_arrow {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #282e3d;
+}
+
+.nav-item-collapsed {
+  display: none;
+}
+.nav-item-dark-collapsed {
+  display: none;
 }
 
 .notice {

@@ -8,16 +8,111 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         
-      <li class="nav-item">
+      <li class="nav-item navbar-nav-left">
           <%= link_to 'Home', root_path, class: 'nav-link'%>
         </li>
        
-        <li class="nav-item">
+        <li class="nav-item navbar-nav-left">
           <%= link_to 'About', about_path, class: 'nav-link'%>
         </li>
-      </ul>
+     
        
-      <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+
+
+
+
+
+
+                        <div class="nav-item-collapsed">
+                          <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                            <%= link_to 'Home', root_path, class: 'nav-link'%>
+                            <div class="lil_arrow"></div>
+                          </li>
+                        </div>
+                        
+                        <div class="nav-item-collapsed">
+                          <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                            <%= link_to 'About', about_path, class: 'nav-link'%>
+                            <div class="lil_arrow"></div>
+                            </li>
+                        </div>
+
+                          <% if user_signed_in? %>
+
+                            <% if current_user.profile.nil? %>
+                            
+                            <div class="nav-item-collapsed">
+                              <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                                <%= link_to 'Profile', new_profile_path, class: 'nav-link'%>
+                                <div class="lil_arrow"></div>
+                              </li>
+                            </div>
+
+                            <% else %>
+
+                            <div class="nav-item-collapsed">
+                              <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                                <%= link_to 'Profile', profiles_path, class: 'nav-link'%>
+                                <div class="lil_arrow"></div>
+                              </li>
+                            </div>
+                              
+                            <% end %>
+                            
+                            <div class="nav-item-collapsed">
+                              <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                                <%= link_to 'Edit User', edit_user_registration_path, class: 'nav-link'%>
+                                <div class="lil_arrow"></div>
+                              </li>
+                            </div>
+
+                            <div class="nav-item-collapsed">
+                              <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'%>
+                                <div class="lil_arrow"></div>
+                              </li>
+                            </div>
+
+                          <% else %>
+                          
+                            <div class="nav-item-collapsed">
+                              <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                                <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'%>
+                                <div class="lil_arrow"></div>
+                              </li>       
+                              
+                            </div>
+
+                            <div class="nav-item-collapsed">
+                              <li class="nav-item-collapsed nav-item d-flex flex-row align-items-center justify-content-between">
+                                <%= link_to 'Sign In', new_user_session_path, class: 'nav-link'%>
+                                <div class="lil_arrow"></div>
+                              </li>
+                            </div>
+
+                        <% end %>
+
+                        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <ul class="navbar-nav navbar-nav-right ms-auto me-3 mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <% if current_user.profile.nil? %>
           <li class="nav-item">
@@ -32,7 +127,7 @@
           <%= link_to 'Edit User', edit_user_registration_path, class: 'nav-link'%>
           </li>
 
-          <div class="d-flex flex-column justify-content-around"> 
+          <div class="nav-item-dark-container"> 
           <li class="nav-item nav-item-dark">
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link py-1'%>
           </li>
@@ -42,9 +137,9 @@
         
         <li class="nav-item">
           <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'%>
-        </li>       
+        </li>      
 
-       <div class="d-flex flex-column justify-content-around">
+       <div class="nav-item-dark-container">
         <li class="nav-item nav-item-dark">
           <%= link_to 'Sign In', new_user_session_path, class: 'nav-link py-1'%>
         </li>
